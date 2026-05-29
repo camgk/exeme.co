@@ -1,0 +1,270 @@
+---
+import CTASection from '@components/CTASection.astro';
+import SectionIntro from '@components/SectionIntro.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const trustPoints = ['Website builds', 'Shopify storefronts', 'Shopify automation', 'AI enrichment', 'Growth systems'];
+
+const services = [
+  {
+    title: 'Premium Website Builds',
+    text: 'Fast, polished marketing sites and ecommerce pages for brands that need a sharper digital presence.',
+    visual: 'site',
+  },
+  {
+    title: 'Shopify Storefront Builds',
+    text: 'High-quality Shopify storefronts, landing pages, theme improvements, and conversion-focused front-end work.',
+    visual: 'shopify',
+  },
+  {
+    title: 'AI Product Enrichment',
+    text: 'AI-native systems for stronger titles, descriptions, attributes, metadata, and product content quality.',
+    visual: 'ai',
+  },
+  {
+    title: 'Shopify Growth Systems',
+    text: 'Automation, feed optimisation, SEO workflows, and operating systems that reduce manual ecommerce work.',
+    visual: 'systems',
+  },
+];
+
+const problems = [
+  'Messy product data across Shopify, feeds, spreadsheets, and content workflows',
+  'Websites or storefronts that no longer reflect the quality of the brand',
+  'Slow product launches because every update needs manual coordination',
+  'Weak SEO foundations across product, collection, and metadata systems',
+  'Poor Google Shopping feeds that limit product visibility and campaign quality',
+  'Disconnected tools that create rework instead of leverage',
+  'Too much manual work for a lean ecommerce team to sustain',
+];
+
+const auditBullets = [
+  'Review Shopify setup',
+  'Review website and storefront experience',
+  'Review product data quality',
+  'Identify automation opportunities',
+  'Evaluate SEO and feed quality',
+  'Produce a practical technical roadmap',
+];
+
+const principles = [
+  ['Engineering-led', 'Systems are designed around durable workflows, not cosmetic activity.'],
+  ['Automation-first', 'Manual steps are kept only where human judgement creates value.'],
+  ['AI-native', 'AI is used as operating leverage, with structure, QA, and clear business intent.'],
+  ['Commercially focused', 'Every build connects to launch speed, content quality, feed strength, or team capacity.'],
+  ['Built for lean teams', 'Simple systems that improve execution without adding management overhead.'],
+];
+
+const steps = [
+  ['Diagnose', 'Map the current operational bottlenecks and product data constraints.'],
+  ['Design', 'Shape the workflows, data rules, and build priorities that matter most.'],
+  ['Build', 'Implement focused systems, automations, templates, and operating tools.'],
+  ['Optimise', 'Review performance, tighten quality, and improve the system as the brand scales.'],
+];
+
+const outcomes = [
+  'Reduce manual product admin',
+  'Launch products faster',
+  'Improve product data quality',
+  'Strengthen Google Shopping feeds',
+  'Build reusable ecommerce workflows',
+  'Create AI-assisted SEO content systems',
+];
+
+const workflowStages = [
+  ['Website', 'Premium pages and storefront experience'],
+  ['Shopify', 'Catalogue, merchandising, and launch flows'],
+  ['Product data', 'Attributes, metadata, and feed inputs'],
+  ['AI enrichment', 'Structured content and QA workflows'],
+  ['Growth channels', 'SEO, shopping feeds, and campaign signals'],
+];
+---
+
+<BaseLayout
+  title="Exeme — Premium Websites, Shopify & AI Growth Systems"
+  description="Exeme builds premium websites, Shopify storefronts, automation, product enrichment, feed optimisation, and ecommerce growth systems."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Premium websites, Shopify, and growth systems</p>
+        <h1>Premium websites, Shopify stores, and AI-powered growth systems.</h1>
+        <p>
+          Exeme builds elegant websites and Shopify storefronts, then helps ecommerce brands automate product operations, enrich catalogues with AI, improve product feeds, and scale without operational complexity.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/contact/">Book a Growth Audit</a>
+          <a class="button button-secondary" href="/services/">Explore Services</a>
+        </div>
+      </div>
+
+      <aside class="system-panel hero-system reveal" aria-label="Exeme systems visual">
+        <header>
+          <span>Growth system map</span>
+          <span>v1</span>
+        </header>
+        <div class="system-orbit" aria-hidden="true">
+          <span class="orbit-ring ring-one"></span>
+          <span class="orbit-ring ring-two"></span>
+          <span class="orbit-core">Exeme</span>
+          <span class="orbit-chip chip-site">Site</span>
+          <span class="orbit-chip chip-ai">AI</span>
+          <span class="orbit-chip chip-feed">Feed</span>
+          <span class="orbit-chip chip-seo">SEO</span>
+        </div>
+        <div class="system-node accent">
+          <strong>Website and storefront</strong>
+          <span>Premium front-end, Shopify UX, launch pages</span>
+        </div>
+        <div class="signal-line"></div>
+        <div class="system-node">
+          <strong>Shopify operations</strong>
+          <span>Launch workflows, QA, merchandising rules</span>
+        </div>
+        <div class="signal-line"></div>
+        <div class="system-node">
+          <strong>AI, feeds, and SEO</strong>
+          <span>Product data, Merchant Center, search systems</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="trust-strip reveal" aria-label="Core capabilities">
+    <div class="container">
+      <ul>
+        {trustPoints.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container two-col">
+      <SectionIntro
+        eyebrow="The problem"
+        title="Premium brands outgrow patchwork websites and manual operations."
+        text="Growth creates pressure across the storefront, the catalogue, the feed, the content workflow, and the team operating model. The work looks small until it becomes the constraint."
+      />
+      <ul class="problem-list">
+        {problems.map((problem) => <li>{problem}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight reveal">
+    <div class="container">
+      <SectionIntro
+        eyebrow="What Exeme builds"
+        title="Digital foundations that look premium and operate cleanly."
+        text="Focused technical work across websites, Shopify storefronts, automation, AI enrichment, product feeds, and growth infrastructure."
+      />
+      <div class="card-grid">
+        {services.map((service, index) => (
+          <article class="card service-card">
+            <div class={`service-visual ${service.visual}`} aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="index">0{index + 1}</span>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section systems-showcase reveal">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Systems Exeme builds"
+        title="One connected operating layer from website to growth channel."
+        text="The front-end, Shopify setup, product data, AI workflows, feeds, and SEO system should reinforce each other instead of creating separate admin loops."
+      />
+      <div class="workflow-graphic" aria-label="Website to growth systems workflow">
+        <div class="workflow-rail" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        {workflowStages.map(([title, text], index) => (
+          <article class="workflow-stage">
+            <span class="workflow-index">0{index + 1}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container offer-panel">
+      <div class="offer-copy">
+        <p class="eyebrow">Featured offer</p>
+        <h2>The Website & Shopify Growth Systems Audit</h2>
+        <p>
+          A focused diagnostic of your website, Shopify storefront, product data, SEO foundations, automation opportunities, and growth bottlenecks.
+        </p>
+        <div class="cta-row">
+          <a class="button button-primary" href="/contact/">Book a Growth Audit</a>
+        </div>
+      </div>
+      <ul class="check-list">
+        {auditBullets.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight reveal">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Why Exeme"
+        title="A technical digital partner, not a generic agency."
+        text="The work is systems-first: premium front-end craft, practical implementation, and ecommerce operations designed around lean teams."
+      />
+      <div class="principles">
+        {principles.map(([title, text]) => (
+          <div class="principle">
+            <strong>{title}</strong>
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <SectionIntro eyebrow="Process" title="A focused build rhythm for ecommerce operations." />
+      <div class="steps">
+        {steps.map(([title, text], index) => (
+          <article class="step">
+            <span>0{index + 1}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight reveal">
+    <div class="container">
+      <SectionIntro eyebrow="Example outcomes" title="The kind of operational leverage worth building." />
+      <div class="card-grid three">
+        {outcomes.map((outcome, index) => (
+          <article class="card">
+            <span class="index">0{index + 1}</span>
+            <h3>{outcome}</h3>
+            <p>Designed as a reusable system, not a one-off workaround.</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Build the website, Shopify storefront, and systems your brand needs before growth creates drag." />
+</BaseLayout>

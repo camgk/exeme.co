@@ -1,0 +1,20 @@
+---
+type Props = {
+  title: string;
+  text?: string;
+  cta?: string;
+};
+
+const { title, text, cta = 'Book a Growth Audit' } = Astro.props;
+---
+
+<section class="final-cta">
+  <div class="container final-cta-inner">
+    <div>
+      <p class="eyebrow">Growth systems</p>
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+    </div>
+    <a class="button button-primary" href="/contact/">{cta}</a>
+  </div>
+</section>

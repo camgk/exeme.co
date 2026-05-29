@@ -1,0 +1,61 @@
+---
+import CTASection from '@components/CTASection.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const process = [
+  {
+    title: 'Discovery',
+    text: 'Clarify the business model, catalogue complexity, team constraints, current tool stack, and the outcomes that matter most.',
+  },
+  {
+    title: 'Systems audit',
+    text: 'Review Shopify setup, product data, feeds, SEO foundations, manual workflows, and places where operations are slowing growth.',
+  },
+  {
+    title: 'Roadmap',
+    text: 'Prioritise the highest-leverage fixes and define the system architecture, implementation sequence, and practical delivery scope.',
+  },
+  {
+    title: 'Build sprint',
+    text: 'Implement the workflows, automations, enrichment systems, templates, and lightweight tools needed to remove operational friction.',
+  },
+  {
+    title: 'Review',
+    text: 'Test the system against real ecommerce workflows, document the operating process, and tighten quality before handover.',
+  },
+  {
+    title: 'Ongoing optimisation',
+    text: 'Refine the system as the brand scales, new bottlenecks appear, and AI or channel requirements evolve.',
+  },
+];
+---
+
+<BaseLayout
+  title="Process | Exeme Shopify Growth Systems"
+  description="A systems-first process for diagnosing, designing, building, and optimising premium websites, Shopify storefronts, and ecommerce growth infrastructure."
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">Process</p>
+      <h1>A calm, technical process for better websites and ecommerce operations.</h1>
+      <p>
+        The process is designed for lean teams: diagnose the constraint, design the site or system, build the useful version, then optimise with evidence.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="process-list">
+        {process.map((step) => (
+          <article class="process-item">
+            <h2>{step.title}</h2>
+            <p>{step.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Start with a focused audit, then build only what earns its place." />
+</BaseLayout>

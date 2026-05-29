@@ -1,0 +1,55 @@
+---
+import CTASection from '@components/CTASection.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { services } from '@data/services';
+---
+
+<BaseLayout
+  title="Services | Exeme Shopify Growth Systems"
+  description="Premium website builds, Shopify storefronts, automation, AI product enrichment, feed optimisation, SEO content systems, and custom ecommerce operations tools."
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">Services</p>
+      <h1>Premium websites, Shopify builds, and technical growth systems.</h1>
+      <p>
+        Exeme builds the public-facing experience and the operational layer behind growth: sharper websites, better Shopify storefronts, cleaner product data, faster launch workflows, and AI-assisted ecommerce systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      {services.map((service) => (
+        <article class="service-detail">
+          <div>
+            <h2>{service.title}</h2>
+            <p>{service.summary}</p>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-box">
+              <h3>What it is</h3>
+              <p>{service.what}</p>
+            </div>
+            <div class="detail-box">
+              <h3>Who it is for</h3>
+              <p>{service.who}</p>
+            </div>
+            <div class="detail-box">
+              <h3>Typical deliverables</h3>
+              <ul class="check-list">
+                {service.deliverables.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h3>Business outcome</h3>
+              <p>{service.outcome}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <CTASection title="Turn your website, Shopify storefront, and ecommerce operations into a growth advantage." />
+</BaseLayout>

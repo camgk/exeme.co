@@ -1,0 +1,73 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact | Exeme"
+  description="Request a website, Shopify, or Growth Systems Audit from Exeme, a technical partner for premium ecommerce brands."
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">Contact</p>
+      <h1>Request a focused website or Shopify growth audit.</h1>
+      <p>
+        For premium brands that need a sharper website, a stronger Shopify storefront, cleaner operations, better product data, and AI-native ecommerce workflows.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container contact-grid">
+      <aside class="contact-aside">
+        <div>
+          <h2>Tell Exeme what needs to be built or improved.</h2>
+          <p>
+            Share the current constraint: a new website, Shopify build, storefront improvement, catalogue admin, product enrichment, feed quality, SEO workflow, launch speed, or disconnected tools.
+          </p>
+        </div>
+        <div class="mail-card">
+          <p class="eyebrow">Mail fallback</p>
+          <p>Prefer email, or want to send context directly?</p>
+          <a href="mailto:hello@exeme.ai?subject=Shopify%20Growth%20Systems%20Audit">hello@exeme.ai</a>
+        </div>
+      </aside>
+
+      <div class="contact-panel">
+        <!-- TODO: Integrate a free/static-friendly form handler or custom backend when the site moves beyond GitHub Pages v1. -->
+        <form class="contact-form" action="mailto:hello@exeme.ai" method="post" enctype="text/plain">
+          <div class="form-note">
+            This v1 GitHub Pages form opens your email client instead of submitting to a backend. Form integration is coming soon.
+          </div>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="url" autocomplete="url" placeholder="https://" />
+          </div>
+          <div class="field">
+            <label for="revenue">Monthly revenue range</label>
+            <select id="revenue" name="monthly revenue range">
+              <option value="">Select a range</option>
+              <option>Under 25k</option>
+              <option>25k to 75k</option>
+              <option>75k to 250k</option>
+              <option>250k+</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">What do you need help with?</label>
+            <textarea id="message" name="what do you need help with" required></textarea>
+          </div>
+          <button class="button button-primary" type="submit">Request Audit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -6,7 +6,7 @@ Built with Astro, TypeScript, static Markdown content, and GitHub Pages deployme
 
 ## Requirements
 
-- Node.js 20+
+- Node.js 22.12+
 - npm
 
 ## Install

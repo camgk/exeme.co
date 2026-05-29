@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('insights');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Exeme`} description={post.data.description}>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">Insight</p>
+      <h1>{post.data.title}</h1>
+      <p>{post.data.description}</p>
+      <div class="article-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+        <span>{post.data.readingTime}</span>
+      </div>
+    </div>
+  </section>
+  <article class="container article">
+    <Content />
+  </article>
+</BaseLayout>

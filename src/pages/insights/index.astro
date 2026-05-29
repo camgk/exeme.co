@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('insights')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const postSlug = (id: string) => id.replace(/\.mdx?$/, '');
+---
+
+<BaseLayout
+  title="Insights | Exeme"
+  description="Practical notes on premium websites, Shopify automation, AI enrichment, product data, feed optimisation, and growth systems."
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">Insights</p>
+      <h1>Short notes on websites, Shopify systems, AI, and ecommerce operations.</h1>
+      <p>
+        Practical thinking for founders and lean teams who want stronger websites, storefronts, and ecommerce infrastructure without adding unnecessary complexity.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container article-grid">
+      {posts.map((post, index) => (
+        <a class="article-card" href={`/insights/${postSlug(post.id)}/`}>
+          <div class={`insight-thumb thumb-${(index % 6) + 1}`} aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="article-meta">
+            <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+            <span>{post.data.readingTime}</span>
+          </div>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <span class="read-more">Read insight</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
